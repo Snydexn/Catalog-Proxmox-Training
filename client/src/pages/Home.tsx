@@ -1,12 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Clock, MapPin, Phone, Mail, MessageCircle, Award, Users, Zap, ArrowRight } from "lucide-react";
+import { CheckCircle2, Clock, MapPin, Phone, Mail, MessageCircle, Award, Users, Zap, Instagram, ArrowUp, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import ahmadImanuddin from "../images/ahmad-imanuddin.jpg";
 import zaidan from "../images/zaidan.jpg";
 import excellentLogo from "../images/excellent.png";
 import proxmoxLogo from "../images/proxmox.png";
 import trainingSession from "../images/training-session.jpg";
+import trainingClass from "../images/training-class.jpg";
+
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -78,12 +80,24 @@ export default function Home() {
                 Master Proxmox VE virtualization platform dengan hands-on training dari Certified Experts di PT Excellent Infotama Kreasindo.
               </p>
               <div className="flex gap-4 pt-6">
+                <a
+                  href="https://bit.ly/registrasi-training-proxmox-excellent"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                 <Button size="lg" className="bg-[#00D9FF] text-[#0F3A7D] hover:bg-white font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105">
                   Daftar Sekarang <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
+                </a>
+                <a
+                  href="https://excellent.co.id"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                 <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 font-bold backdrop-blur-sm">
-                  Pelajari Lebih Lanjut
+                  Tentang Kami
                 </Button>
+                </a>
               </div>
             </div>
             <div className="relative h-96 md:h-full animate-fade-in" style={{ animationDelay: "0.2s" }}>
@@ -239,15 +253,22 @@ export default function Home() {
       {/* Facilities & Syllabus Section */}
       <section className="py-24 bg-white relative">
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FF6B35]/10 rounded-full blur-3xl -z-10"></div>
+
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16">
+
             {/* Facilities */}
             <div>
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-1 h-10 bg-gradient-to-b from-[#00D9FF] to-transparent rounded-full"></div>
-                <h3 className="heading-md text-[#0F3A7D] text-3xl font-black">Fasilitas</h3>
+
+                <h3 className="heading-md text-[#0F3A7D] text-3xl font-black">
+                  Fasilitas
+                </h3>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+
+              <div className="grid grid-cols-2 gap-4 mb-8">
+
                 {[
                   "Buku Materi Training",
                   "Sertifikat Resmi",
@@ -258,13 +279,33 @@ export default function Home() {
                   "Notebook dan alat tulis",
                   "Hands-on Lab Praktik Langsung"
                 ].map((facility, idx) => (
-                  <div key={idx} className="flex gap-3 bg-gradient-to-br from-[#00D9FF]/10 to-transparent p-4 rounded-2xl border border-[#00D9FF]/20 hover:border-[#00D9FF]/50 transition-all hover:shadow-md">
+
+                  <div
+                    key={idx}
+                    className="flex gap-3 bg-gradient-to-br from-[#00D9FF]/10 to-transparent p-4 rounded-2xl border border-[#00D9FF]/20 hover:border-[#00D9FF]/50 transition-all hover:shadow-md"
+                  >
+
                     <div className="w-5 h-5 rounded-full bg-[#FF6B35] flex items-center justify-center flex-shrink-0 mt-0.5">
                       <span className="text-white text-xs font-bold">✓</span>
                     </div>
-                    <p className="text-gray-700 text-sm font-medium">{facility}</p>
+
+                    <p className="text-gray-700 text-sm font-medium">
+                      {facility}
+                    </p>
+
                   </div>
                 ))}
+              </div>
+
+              {/* IMAGE */}
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00D9FF]/20 to-[#FF6B35]/20 rounded-3xl blur-2xl opacity-50"></div>
+
+                <img
+                  src={trainingClass}
+                  alt="Training Class"
+                  className="relative w-full h-[300px] object-cover rounded-3xl shadow-2xl border border-[#00D9FF]/20 hover:scale-[1.01] transition-transform"
+                />
               </div>
             </div>
 
@@ -272,9 +313,14 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-1 h-10 bg-gradient-to-b from-[#FF6B35] to-transparent rounded-full"></div>
-                <h3 className="heading-md text-[#0F3A7D] text-3xl font-black">Silabus</h3>
+
+                <h3 className="heading-md text-[#0F3A7D] text-3xl font-black">
+                  Silabus
+                </h3>
               </div>
+
               <div className="space-y-3">
+
                 {[
                   "Instalasi & Manajemen Standalone",
                   "Konsep dasar KVM dan LXC",
@@ -286,13 +332,25 @@ export default function Home() {
                   "Live Migration & High Availability",
                   "Backup, Restore & Keamanan"
                 ].map((item, idx) => (
-                  <div key={idx} className="flex gap-4 p-4 bg-gradient-to-r from-[#E8F0F8] to-transparent rounded-2xl border-l-4 border-[#00D9FF] hover:shadow-md transition-all hover:translate-x-1">
-                    <span className="text-[#0F3A7D] font-bold text-sm flex-shrink-0 w-6 text-center bg-[#00D9FF]/20 rounded-full h-6 flex items-center justify-center">{idx + 1}</span>
-                    <p className="text-gray-700 font-medium">{item}</p>
+
+                  <div
+                    key={idx}
+                    className="flex gap-4 p-4 bg-gradient-to-r from-[#E8F0F8] to-transparent rounded-2xl border-l-4 border-[#00D9FF] hover:shadow-md transition-all hover:translate-x-1"
+                  >
+
+                    <span className="text-[#0F3A7D] font-bold text-sm flex-shrink-0 w-6 text-center bg-[#00D9FF]/20 rounded-full h-6 flex items-center justify-center">
+                      {idx + 1}
+                    </span>
+
+                    <p className="text-gray-700 font-medium">
+                      {item}
+                    </p>
+
                   </div>
                 ))}
               </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -386,12 +444,15 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-3">
+            <a
+                  href="https://bit.ly/registrasi-training-proxmox-excellent"
+                  target="_blank"
+                  rel="noopener noreferrer"
+            >
             <Button size="lg" className="bg-[#00D9FF] text-[#0F3A7D] hover:bg-white font-bold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all">
               Daftar Sekarang <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 font-bold text-lg backdrop-blur-sm">
-              Hubungi Kami
-            </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -421,51 +482,259 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-[#0F3A7D] to-[#1A4D9E] text-white py-16 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="footer-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#footer-grid)" />
-          </svg>
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <h4 className="font-bold mb-4 text-lg">PT Excellent Infotama Kreasindo</h4>
-              <p className="text-gray-300 text-sm font-light">Proxmox VE Gold Partner dengan pengalaman lebih dari 15 tahun di bidang infrastruktur IT.</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4 text-lg">Quick Links</h4>
-              <ul className="space-y-2 text-gray-300 text-sm font-light">
-                <li><a href="#about" className="hover:text-[#00D9FF] transition-colors">About</a></li>
-                <li><a href="#benefits" className="hover:text-[#00D9FF] transition-colors">Benefits</a></li>
-                <li><a href="#trainers" className="hover:text-[#00D9FF] transition-colors">Trainers</a></li>
+      <footer className="bg-[#02005B] text-white pt-20 pb-16 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-8">
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
+
+          {/* KATEGORI */}
+          <div>
+            <h3 className="text-[18px] font-semibold uppercase tracking-wide mb-10">
+              KATEGORI
+            </h3>
+
+            <div className="w-full h-[1px] bg-cyan-400/70 mb-14"></div>
+
+            <ul>
+              <li className="mb-4 text-[17px] leading-relaxed">
+                <a
+                  href="https://excellent.co.id"
+                  className="hover:text-cyan-300 transition-colors"
+                >
+                  Home
+                </a>
+              </li>
+
+              <li className="mb-4 text-[17px] leading-relaxed">
+                <a
+                  href="https://excellent.co.id/category/excellent"
+                  className="hover:text-cyan-300 transition-colors"
+                >
+                  Artikel
+                </a>
+              </li>
+
+              <li className="mb-4 text-[17px] leading-relaxed">
+                <a
+                  href="https://excellent.co.id/training/"
+                  className="hover:text-cyan-300 transition-colors"
+                >
+                  Training
+                </a>
+              </li>
+
+              <li className="mb-4 text-[17px] leading-relaxed">
+                <a
+                  href="https://excellent.co.id/category/event"
+                  className="hover:text-cyan-300 transition-colors"
+                >
+                  Event
+                </a>
+              </li>
+
+              <li className="mb-4 text-[17px] leading-relaxed">
+                <a
+                  href="https://excellent.co.id/category/news"
+                  className="hover:text-cyan-300 transition-colors"
+                >
+                  Berita
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* LAYANAN */}
+          <div>
+            <h3 className="text-[18px] font-semibold uppercase tracking-wide mb-10">
+              LAYANAN
+            </h3>
+
+            <div className="w-full h-[1px] bg-cyan-400/70 mb-14"></div>
+
+            <div className="grid grid-cols-2 gap-x-10">
+              <ul>
+                <li className="mb-4 text-[17px]">
+                  <a
+                    href="https://excellent.co.id/zimbra"
+                    className="hover:text-cyan-300 transition-colors"
+                  >
+                    Zimbra Mail Server
+                  </a>
+                </li>
+
+                <li className="mb-4 text-[17px]">
+                  <a
+                    href="https://ubuntu.excellent.co.id"
+                    className="hover:text-cyan-300 transition-colors"
+                  >
+                    Ubuntu
+                  </a>
+                </li>
+
+                <li className="mb-4 text-[17px]">
+                  <a
+                    href="https://xcp.excellent.co.id"
+                    className="hover:text-cyan-300 transition-colors"
+                  >
+                    XCP-ng
+                  </a>
+                </li>
+
+                <li className="mb-4 text-[17px]">
+                  <a
+                    href="https://vinchin.excellent.co.id"
+                    className="hover:text-cyan-300 transition-colors"
+                  >
+                    Vinchin
+                  </a>
+                </li>
+
+                <li className="mb-4 text-[17px]">
+                  <a
+                    href="https://excellent.co.id/asav"
+                    className="hover:text-cyan-300 transition-colors"
+                  >
+                    ASAV
+                  </a>
+                </li>
+              </ul>
+
+              <ul>
+                <li className="mb-4 text-[17px]">
+                  <a
+                    href="https://proxmox.excellent.co.id/"
+                    className="hover:text-cyan-300 transition-colors"
+                  >
+                    Proxmox
+                  </a>
+                </li>
+
+                <li className="mb-4 text-[17px]">
+                  <a
+                    href="https://redhat.excellent.co.id"
+                    className="hover:text-cyan-300 transition-colors"
+                  >
+                    RHEL
+                  </a>
+                </li>
+
+                <li className="mb-4 text-[17px]">
+                  <a
+                    href="https://nakivo.excellent.co.id/"
+                    className="hover:text-cyan-300 transition-colors"
+                  >
+                    Nakivo
+                  </a>
+                </li>
+
+                <li className="mb-4 text-[17px]">
+                  <a
+                    href="https://excellent.co.id/smtp"
+                    className="hover:text-cyan-300 transition-colors"
+                  >
+                    SMTP Relay
+                  </a>
+                </li>
+
+                <li className="mb-4 text-[17px]">
+                  <a
+                    href="https://excellent.co.id/ssl"
+                    className="hover:text-cyan-300 transition-colors"
+                  >
+                    SSL Certificate
+                  </a>
+                </li>
               </ul>
             </div>
-            <div>
-              <h4 className="font-bold mb-4 text-lg">Contact</h4>
-              <ul className="space-y-2 text-gray-300 text-sm font-light">
-                <li>Email: sales@excellent.co.id</li>
-                <li>Phone: 021 8267 8811</li>
-                <li>WhatsApp: 0813 1730 0101</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4 text-lg">Location</h4>
-              <p className="text-gray-300 text-sm font-light">Ruko Premier Serenity Blok J12, Bekasi Jaya, Bekasi Timur, Bekasi 17112, Jawa Barat, Indonesia</p>
+          </div>
+
+          {/* KONTAK */}
+          <div>
+            <h3 className="text-[18px] font-semibold uppercase tracking-wide mb-10">
+              KONTAK KAMI
+            </h3>
+
+            <div className="w-full h-[1px] bg-cyan-400/70 mb-14"></div>
+
+            <p className="text-[17px] leading-[2.1] text-white/95">
+              PT. Excellent Infotama Kreasindo,
+              Premier Serenity Blok J12,
+              Jl. KH. Agus Salim No. 40E,
+              Bekasi Jaya, Bekasi Timur,
+              Bekasi 17112, Jawa Barat,
+              Indonesia
+            </p>
+
+            <div className="flex gap-5 mt-10">
+
+              <a
+                href="mailto:sales@excellent.co.id"
+                className="hover:text-cyan-300 transition-colors"
+              >
+                <Mail size={38} strokeWidth={1.7} />
+              </a>
+
+              <a
+                href="tel:02182678811"
+                className="hover:text-cyan-300 transition-colors"
+              >
+                <Phone size={38} strokeWidth={1.7} />
+              </a>
+
+              <a
+                href="https://wa.me/6281317300101"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cyan-300 transition-colors"
+              >
+                <MessageCircle size={38} strokeWidth={1.7} />
+              </a>
+
+              <a
+                href="https://www.instagram.com/excellent.infotama"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cyan-300 transition-colors"
+              >
+                <Instagram size={38} strokeWidth={1.7} />
+              </a>
+
             </div>
           </div>
-          
-          <div className="border-t border-white/20 pt-8 text-center text-gray-300 text-sm font-light">
-            <p>&copy; 2026 PT Excellent Infotama Kreasindo. All rights reserved.</p>
+
+          {/* TENTANG */}
+          <div>
+            <h3 className="text-[18px] font-semibold uppercase tracking-wide mb-10">
+              TENTANG KAMI
+            </h3>
+
+            <div className="w-full h-[1px] bg-cyan-400/70 mb-14"></div>
+
+            <p className="text-[17px] leading-[2.1] text-white/95">
+              PT. Excellent Infotama Kreasindo merupakan entitas bisnis yang
+              fokus pada layanan komputerisasi seperti implementasi sistem,
+              konsultasi, training/workshop, dan maintenance sistem,
+              terutama migrasi dari sistem Windows ke Linux.
+              {" "}
+              <a
+                href="/about-us"
+                className="text-cyan-400 hover:text-cyan-300"
+              >
+                more...
+              </a>
+            </p>
           </div>
         </div>
-      </footer>
+      </div>
+
+      {/* BACK TO TOP */}
+      <a
+        href="#top"
+        className="fixed bottom-8 right-8 w-20 h-20 rounded-full bg-[#F2E58D] flex items-center justify-center shadow-2xl hover:scale-105 transition-transform z-50"
+      >
+        <ArrowUp size={40} className="text-[#1B1B1B]" strokeWidth={2.2} />
+      </a>
+    </footer>
 
       {/* CSS for animations */}
       <style>{`
