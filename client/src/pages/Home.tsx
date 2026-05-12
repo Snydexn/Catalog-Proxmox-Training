@@ -6,6 +6,7 @@ import ahmadImanuddin from "../images/ahmad-imanuddin.jpg";
 import zaidan from "../images/zaidan.jpg";
 import excellentLogo from "../images/excellent.png";
 import proxmoxLogo from "../images/proxmox.png";
+import trainingSession from "../images/training-session.jpg";
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -200,7 +201,7 @@ export default function Home() {
               <div className="flex justify-center relative group">
                 <div className="absolute inset-0 rounded-3xl blur-2xl opacity-30 group-hover:opacity-30 transition-opacity"></div>
                 <img 
-                  src="/src/images/training-session.jpg"
+                  src={trainingSession}
                   alt="Training Session"
                   className="w-full max-w-xl rounded-3xl shadow-2xl border-2 border-white/20 group-hover:border-[#00D9FF]/50 transition-all"
                 />
