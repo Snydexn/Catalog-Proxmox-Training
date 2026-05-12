@@ -45,7 +45,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0F3A7D] via-[#1A4D9E] to-[#0F3A7D] min-h-screen flex items-center">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0F3A7D] via-[#1A4D9E] to-[#0F3A7D] min-h-screen flex items-center pb-32">
         {/* Animated background elements */}
         <div className="absolute inset-0 opacity-20 overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#00D9FF] rounded-full blur-3xl animate-pulse" style={{ animationDelay: "0s" }}></div>
